@@ -1,38 +1,172 @@
-.App {
-  text-align: center;
+
+
+.round-border {
+  border-radius: 20px;
 }
 
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
+p {
+  color: #f15a24;
+  font-weight: 500;
 }
 
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
-  }
-}
-
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  font-size: calc(10px + 2vmin);
+h1 {
   color: white;
 }
 
-.App-link {
-  color: #61dafb;
+/*Header Styling*/
+@font-face {
+  font-family: RockoFLF;
+  src: url(../public/RockoFLF.woff);
 }
 
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
+.header {
+  margin: auto;
+  max-width: 900px;
+  padding: 0 5%
+}
+
+.header h1{
+  font-family: RockoFLF, Arial, Helvetica, sans-serif;
+  color: #f15a24;
+  font-size: 50px;
+  margin: 20px 0 -10px 0;
+}
+
+/*Header Navigation Styling*/
+.header nav {
+  margin: 0px;
+  list-style: none;
+  text-decoration: none;
+  padding: 0;
+  display: inline;
+}
+
+.header a{
+  font-weight: 800;
+  color: #f15a24;
+  display: inline-block;
+  list-style: none;
+  text-decoration: none;
+  border: #f15a24 5px solid;
+  margin: 0 20px 0 0;
+  text-align: center;
+  padding: 5px 10px;
+  border-radius: 30px;
+  min-width: 50px;
+}
+
+.header a:focus{
+  font-weight: 800;
+  color: white;
+  background-color: #f15a24;
+  display: inline-block;
+  list-style: none;
+  text-decoration: none;
+  border: #f15a24 5px solid;
+  margin: 0 20px 0 0;
+  text-align: center;
+  padding: 5px 10px;
+  border-radius: 30px;
+  min-width: 50px;
+}
+
+.header li {
+  list-style: none;
+  display: inline;
+  width: 200px;
+}
+
+
+/*Feed Styling*/
+.feed-container {
+  display: flex;
+  height: 800px;
+  width: auto;
+  max-width: 800px;
+  margin: auto;
+  background-color: #f15a24;
+  padding: 0 30px;
+  border-radius: 30px 30px 0 0;
+  border: #f15a24 10px solid;
+  border-bottom: 0px;
+}
+
+.feed {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: flex-start;
+  width: 100%;
+  height: auto;
+  bottom: 0;
+  overflow-y: scroll;
+}
+
+.feed::-webkit-scrollbar {
+  overflow-y: hidden;
+  pointer-events: none;
+}
+
+
+/*Post Styling*/
+.post {
+  width: 100%;
+  max-width: 1000px;
+}
+
+.post .post-img img {
+  width: 100%;
+  border-radius: 30px;
+}
+
+.post-info {
+  display: flex;
+  height: 50px;
+  align-items: center;
+  margin-top: 20px;
+  padding: 0 20px;
+  background-color: white;
+}
+
+.post-title {
+  height: auto;
+}
+
+.post-user {
+  width: auto;
+}
+
+/*Stats Styling*/
+.stats-container {
+  min-width: 200px;
+  padding: 10px 20px;
+  background-color: white;
+  margin-top: 70px;
+}
+
+.stats-title p{
+  font-weight: 900;
+  text-transform: uppercase;
+}
+
+.stats-info p{
+  color: gray;
+  margin-left: 10px;
+  line-height: 50%;
+}
+
+.score .score-title{
+  font-weight: 900;
+  text-transform: uppercase;
+  font-size: 1rem;
+  text-align: start;
+  margin: 10px 0 0 15px;
+
+}
+
+.score p {
+  color: white;
+  font-size: 50px;
+  text-align: end;
+  margin: auto;
 }
