@@ -1,11 +1,17 @@
-// import React, { useEffect } from 'react'
+import { useEffect } from 'react'
+import { useDispatch } from 'react-redux'
+import { fetchPosts, fetchSubreddits } from '../api/reddit'
 import Post from '../components/Post'
 import {Stats} from '../components/Stats'
-// import { useDispatch } from 'react-redux'
-// import { fetchPosts } from '../api/reddit'
 
 export const Home = () => {
 
+  const dispatch = useDispatch()
+
+  useEffect(() => {
+    dispatch(fetchPosts())
+    dispatch(fetchSubreddits())
+  }, [dispatch])
 
   return (
     <section className='feed-container'>

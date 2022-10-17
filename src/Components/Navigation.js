@@ -4,7 +4,7 @@ import {
     Routes,
     Route
 } from 'react-router-dom'
-import { Feed } from '../Pages/Feed'
+import { Home } from '../Pages/Home'
 
 const Navigation = () => {
   return (
@@ -13,7 +13,7 @@ const Navigation = () => {
         <nav >
           <ul>
             <li>
-              <Link to="/">Feed</Link>
+              <Link to="/">Home</Link>
             </li>
             <li>
                 <Link to="/profile">Profile</Link>
@@ -22,7 +22,7 @@ const Navigation = () => {
         </nav>
         
         <Routes>
-          <Route path="/feed" element={<Feed />} />
+          <Route path="/feed" element={<Home />} />
         </Routes>
       </div>
   )

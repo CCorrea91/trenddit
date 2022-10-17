@@ -1,18 +1,18 @@
 import { createSlice } from "@reduxjs/toolkit";
 import { fetchPosts } from "../api/reddit";
 
-
+const initialState= {
+    posts: [],
+    isLoading: false,
+    status: '',
+    error: false,
+    errorMessage: '',
+    searchTerm: '',
+}
 
 export const postsSlice = createSlice({
     name: 'posts',
-    initialState: {
-        posts: [],
-        isLoading: false,
-        status: '',
-        error: false,
-        errorMessage: '',
-        searchTerm: '',
-    },
+    initialState,
     reducers: {},
     extraReducers: {
         [fetchPosts.pending]: (state) => {

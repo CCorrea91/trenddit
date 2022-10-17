@@ -1,13 +1,13 @@
 import './App.css';
-import { Feed } from './Pages/Feed';
-import Navigation from './Components/Navigation';
+import { Home } from './Pages/Home';
+import Navigation from './components/Navigation';
 
 function App() {
   return (
 
     <div className="App">
       <Navigation />
-      <Feed/>
+      <Home/>
     </div>
   );
 }
