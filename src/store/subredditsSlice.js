@@ -21,7 +21,7 @@ export const subredditsSlice = createSlice({
         [fetchSubreddits.fulfilled]: (state, action) => {
             state.isLoading = false
             state.status = 'Success'
-            state.posts = action.payload
+            state.subreddits = action.payload
         },
         [fetchSubreddits.rejected]: (state, action) => {
             state.error = true
@@ -30,3 +30,5 @@ export const subredditsSlice = createSlice({
         }
     }
 })
+
+export default subredditsSlice;

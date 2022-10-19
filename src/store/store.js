@@ -4,8 +4,8 @@ import { subredditsSlice } from './subredditsSlice'
 
 const store = configureStore({
     reducer: {
-        posts: postsSlice,
-        subreddits: subredditsSlice,
+        posts: postsSlice.reducer,
+        subreddits: subredditsSlice.reducer,
     }
 })
 

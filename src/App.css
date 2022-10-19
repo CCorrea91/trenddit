@@ -137,19 +137,19 @@ h1 {
 }
 
 /*Stats Styling*/
-.stats-container {
+.subreddit-container {
   min-width: 200px;
   padding: 10px 20px;
   background-color: white;
   margin-top: 70px;
 }
 
-.stats-title p{
+.subreddit-title p{
   font-weight: 900;
   text-transform: uppercase;
 }
 
-.stats-info p{
+.subreddit-info p{
   color: gray;
   margin-left: 10px;
   line-height: 50%;

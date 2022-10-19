@@ -7,6 +7,11 @@ import {
 import { Home } from '../Pages/Home'
 
 const Navigation = () => {
+
+  <Routes>
+    <Route path="/" element={<Home />} />
+  </Routes>
+
   return (
       <div className='header'>
         <h1>Trenddit</h1>
@@ -21,9 +26,7 @@ const Navigation = () => {
           </ul>
         </nav>
         
-        <Routes>
-          <Route path="/feed" element={<Home />} />
-        </Routes>
+
       </div>
   )
 }

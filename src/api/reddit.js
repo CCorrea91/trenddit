@@ -4,13 +4,15 @@ export const apiRoot = 'https://www.reddit.com'
 
 export const fetchPosts = createAsyncThunk(
     'posts/fetchPosts',
-    async(subreddit = '') => {
+    async(subreddit = '/new') => {
 
         const response = await fetch(`${apiRoot}/${subreddit}.json`)
         const json = await response.json()
         const posts = json.data.children
         const post = posts.map(post => post.data)
-        return post
+        const nextPage = json.data.after
+        console.log(post, nextPage)
+        return [post, nextPage]
 
     }
 )

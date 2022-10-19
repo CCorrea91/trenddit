@@ -8,12 +8,19 @@ const initialState= {
     error: false,
     errorMessage: '',
     searchTerm: '',
+    selectedPosts: '/new',
+    currentPage: 1,
+    nextPage: ''
 }
 
 export const postsSlice = createSlice({
     name: 'posts',
     initialState,
-    reducers: {},
+    reducers: {
+        setNextPage: (state) => {
+            state.currentPage ++
+        }
+    },
     extraReducers: {
         [fetchPosts.pending]: (state) => {
             state.isLoading = true
@@ -22,7 +29,8 @@ export const postsSlice = createSlice({
         [fetchPosts.fulfilled]: (state, action) => {
             state.isLoading = false
             state.status = 'Success'
-            state.posts = action.payload
+            state.posts = action.payload[0]
+            state.nextPage = action.payload[1]
         },
         [fetchPosts.rejected]: (state, action) => {
             state.error = true
@@ -32,13 +40,6 @@ export const postsSlice = createSlice({
     }
 })
 
-
-export const selectPosts = (state) => state.postsSlice.posts;
-
-export const { 
-    startGetPosts, 
-    getPostsSuccess, 
-    getPostsFailed 
-} = postsSlice.actions;
-
-export default postsSlice.reducer; 
+export const selectNextPage = state => state.posts.nextPage
+export const { setNextPage } = postsSlice.actions
+export default postsSlice

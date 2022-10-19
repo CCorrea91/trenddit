@@ -1,18 +1,23 @@
 import React from 'react'
 import '../App.css'
 
-export const Post = () => {
+export const Post = ({postInfo}) => {
+
+  const postMedia = postInfo.url
+  const postAuthor = postInfo.author
+  const postTitle = postInfo.title
+
   return (
     <div className='post'>
         <div className='post-title'>
-                <h1>Example Title</h1> 
+                <h1>{postTitle}</h1> 
         </div>
         <div className='post-img round-border'>
-            <img alt='' src="https://images.unsplash.com/photo-1453728013993-6d66e9c9123a?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1170&q=80"/>
+            <img alt='' src={postMedia}/>
         </div>
         <div className='post-info round-border'>
             <div className='post-user'>
-                <p>u/exampleuser</p>
+                <p>u/{postAuthor}</p>
             </div>
         </div>
         <br />
